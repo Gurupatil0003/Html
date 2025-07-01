@@ -33,6 +33,83 @@
 
 ```
 
+## Alert
+
+```js
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alert Box</title>
+</head>
+<body>
+
+  <h2>Click the Button</h2>
+
+  <button onclick="showAlert()">Click Me!</button>
+
+  <script>
+    function showAlert() {
+      alert("Hello! This is an alert box.");
+    }
+  </script>
+
+</body>
+</html>
+
+
+```
+
+```js
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Text</title>
+</head>
+<body>
+
+  <h2 id="text">Hello, World!</h2>
+
+  <button onclick="changeText()">Change Text</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("text").innerText = "You clicked the button!";
+    }
+  </script>
+
+</body>
+</html>
+```
+
+```js
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click Counter</title>
+</head>
+<body>
+
+  <h2>Button Click Counter</h2>
+
+  <button onclick="countClicks()">Click me</button>
+
+  <p id="clickCount">Clicked 0 times</p>
+
+  <script>
+    let clicks = 0;
+
+    function countClicks() {
+      clicks++;
+      document.getElementById("clickCount").innerText = "Clicked " + clicks + " times";
+    }
+  </script>
+
+</body>
+</html>
+
+```
+
 
 ## React
 ### App.jsx
