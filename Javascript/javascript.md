@@ -1272,3 +1272,70 @@ export default App;
 ```
 
 
+```jsx
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px 0;
+  color: #333;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #2a2828;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}
+
+nav a.active {
+  background-color: #007bff;
+  color: rgb(145, 136, 136);
+}
+
+div {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: rgb(54, 52, 52);
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+```
+
+```jsx
+body {
+  
+  justify-content: center;
+
+}
+
+h1 {
+  color: #007bff;
+}
+
+
+```
+
