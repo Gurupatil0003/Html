@@ -1025,6 +1025,134 @@ export default App;
 
 ```
 
+```jsx
+npm install react-router-dom
+
+```
+
+# Routing
+
+```
+src/
+├── App.jsx
+├── main.jsx
+├── Home.jsx
+├── About.jsx
+└── Contact.jsx
+
+```
+
+## App.jsx
+```jsx
+
+import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div style={{ padding: "20px", textAlign: "center" }}>
+        <h1>🌐 React Router Example</h1>
+        <nav style={{ marginBottom: "20px" }}>
+          <Link to="/" style={{ margin: "0 10px" }}>Home</Link>
+          <Link to="/about" style={{ margin: "0 10px" }}>About</Link>
+          <Link to="/contact" style={{ margin: "0 10px" }}>Contact</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+```
+
+## main.jsx
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css"; // Optional
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+```
+
+## Home.jsx
+```jsx
+
+import React from "react";
+
+function Home() {
+  return (
+    <div>
+      <h2>🏠 Welcome to Our Website</h2>
+      <p>This is a simple React site built using Vite and React Router.</p>
+      
+    </div>
+  );
+}
+
+export default Home;
+
+```
+
+## About.jsx
+
+```jsx
+import React from "react";
+
+function About() {
+  return (
+    <div>
+      <h2>📘 About Us</h2>
+      <p>
+        We are passionate developers building simple and useful web apps. This site is built using:
+      </p>
+      <ul style={{ listStyleType: "circle", textAlign: "left", maxWidth: "500px", margin: "auto" }}>
+        <li>React</li>
+        <li>Vite</li>
+        <li>React Router</li>
+      </ul>
+    </div>
+  );
+}
+
+export default About;
+
+```
+
+## Contact.jsx
+```jsx
+import React from "react";
+
+function Contact() {
+  return (
+    <div>
+      <h2>📞 Contact Us</h2>
+      <p>We're happy to hear from you!</p>
+      <p>Email: <a href="mailto:support@example.com">support@example.com</a></p>
+      <p>Phone: +91 98765 43210</p>
+      
+    </div>
+  );
+}
+
+export default Contact;
+```
 
 
 
