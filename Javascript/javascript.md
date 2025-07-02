@@ -1216,6 +1216,59 @@ function Contact() {
 export default Contact;
 ```
 
+#Extra
+```jsx
+import React from 'react';
+import Header from './Header';
+import './App.css';
 
+function App() {
+  return (
+    <div>
+      <Header />
+      <h1>Hello Class</h1>
+
+      {/* 1. Marquee */}
+      <marquee behavior="scroll" direction="left">🚀 Welcome to React Learning! 🚀</marquee>
+
+      {/* 2. Details & Summary */}
+      <details style={{ marginTop: "20px" }}>
+        <summary>Click to reveal a fun fact!</summary>
+        <p>React was created by Jordan Walke at Facebook 🧠</p>
+      </details>
+
+      {/* 3. Progress Bar */}
+      <div style={{ marginTop: "20px" }}>
+        <p>React Learning Progress:</p>
+        <progress value="70" max="100"></progress>
+      </div>
+
+      {/* 4. Fieldset & Legend */}
+      <fieldset style={{ marginTop: "20px", padding: "10px" }}>
+        <legend>Student Info</legend>
+        <p>Name: Mounesh</p>
+        <p>Course: React JS</p>
+      </fieldset>
+
+      {/* 5. Emoji Button */}
+      <button
+        onClick={() => alert("👏 You're doing awesome! Keep going!")}
+        style={{ marginTop: "20px", padding: "10px", cursor: "pointer" }}
+      >
+        🎉 Click Me!
+      </button>
+
+      {/* 6. Rainbow Text */}
+      <h2 className="rainbow-text" style={{ marginTop: "30px" }}>
+        You're a React Rockstar 🌈
+      </h2>
+    </div>
+  );
+}
+
+export default App;
+
+
+```
 
 
