@@ -703,6 +703,68 @@ export default products;
 ```
 
 ## App.css
+
+```jsx
+/* src/App.css */
+body {
+  font-family: sans-serif;
+  background: #e83838;
+  justify-content: center;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  width: 220px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+
+button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 30px;
+}
+
+
+
+
+
+
+```
 ```react
 /* src/App.css */
 body {
