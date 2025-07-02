@@ -552,7 +552,7 @@ export default Header;
 ## Change name
 
 ### App.jsx
-```react
+```jsx
 import React, { useState } from "react"; // ✅ import useState
 import Header from "./Header";
 
@@ -606,7 +606,7 @@ export default App;
 
 
 ## App.jsx
-```python
+```jsx
 // src/App.jsx
 import React from 'react';
 import './App.css'; // for styles
@@ -656,7 +656,7 @@ export default App;
 ```
 
 ## Main.jsx
-```
+```jsx
 // src/main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -672,7 +672,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 ## Data.js
 
 
-```python
+```jsx
 const products = [
   {
     id: 1,
