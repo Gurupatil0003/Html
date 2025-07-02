@@ -772,6 +772,88 @@ footer {
 ```
 
 
+```react
+// src/App.jsx
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [cartCount, setCartCount] = useState(0);
+  const [showCart, setShowCart] = useState(false);
+
+  const handleAddToCart = () => {
+    setCartCount(cartCount + 1);
+  };
+
+  return (
+    <div className="container">
+      {/* Header */}
+      <header className="header">
+        <h1>ShopEasy 🛍️</h1>
+        <div>
+          <button className="cart-toggle" onClick={() => setShowCart(!showCart)}>
+            🛒 View Cart ({cartCount})
+          </button>
+        </div>
+      </header>
+
+      {/* Products */}
+      <section className="products">
+        <div className="card">
+          <img src="/OIP.jpeg" alt="Smart Watch" />
+          <h2>Smart Watch</h2>
+          <p>Track your steps, heart rate, and more.</p>
+          <p className="price">₹1,999</p>
+          <button onClick={handleAddToCart}>Add to Cart</button>
+        </div>
+
+        <div className="card">
+          <img src="/OIP.jpeg" alt="Bluetooth Speaker" />
+          <h2>Bluetooth Speaker</h2>
+          <p>Deep bass, portable, long battery life.</p>
+          <p className="price">₹1,499</p>
+          <button onClick={handleAddToCart}>Add to Cart</button>
+        </div>
+
+        <div className="card">
+          <img src="/OIP.jpeg" alt="Wireless Headphones" />
+          <h2>Wireless Headphones</h2>
+          <p>Noise cancellation, high-quality sound.</p>
+          <p className="price">₹2,499</p>
+          <button onClick={handleAddToCart}>Add to Cart</button>
+        </div>
+      </section>
+
+      {/* Sidebar Cart */}
+      {showCart && (
+        <div className="cart-sidebar">
+          <h2>🛒 Cart</h2>
+          <p>You have {cartCount} item(s) in your cart.</p>
+          <button onClick={() => setShowCart(false)}>Close</button>
+        </div>
+      )}
+
+      {/* Footer */}
+      <footer>
+        <p>© 2025 ShopEasy. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
+
+
+```
+
+
+```react
+
+
+
+```
+
+
 
 
 
