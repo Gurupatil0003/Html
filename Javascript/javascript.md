@@ -48,6 +48,62 @@ Non-Primitive (Reference):
   - Function
 
 
+```
+
+# ⚙️ JavaScript Operators Cheat Sheet
+
+This table covers all major JavaScript operators with clear descriptions, usage, examples, and outputs.
+
+---
+
+## 📚 Full JavaScript Operators Table
+
+| Operator Type         | Operator | What It Does                                | How to Use (Syntax)       | Example                           | Output       |
+|-----------------------|----------|---------------------------------------------|----------------------------|------------------------------------|--------------|
+| **Arithmetic**        | `+`      | Adds two numbers or strings                 | `a + b`                   | `5 + 3`                            | `8`          |
+|                       | `-`      | Subtracts right from left operand           | `a - b`                   | `10 - 4`                           | `6`          |
+|                       | `*`      | Multiplies two numbers                      | `a * b`                   | `2 * 3`                            | `6`          |
+|                       | `/`      | Divides left by right operand               | `a / b`                   | `10 / 2`                           | `5`          |
+|                       | `%`      | Returns remainder                          | `a % b`                   | `10 % 3`                           | `1`          |
+|                       | `**`     | Exponentiation (power)                      | `a ** b`                  | `2 ** 3`                           | `8`          |
+| **Assignment**        | `=`      | Assigns value to variable                   | `x = y`                   | `x = 5`                            | `5`          |
+|                       | `+=`     | Adds and assigns                           | `x += y`                  | `x = 3; x += 2`                    | `5`          |
+|                       | `-=`     | Subtracts and assigns                      | `x -= y`                  | `x = 5; x -= 2`                    | `3`          |
+|                       | `*=`     | Multiplies and assigns                     | `x *= y`                  | `x = 4; x *= 2`                    | `8`          |
+|                       | `/=`     | Divides and assigns                        | `x /= y`                  | `x = 10; x /= 2`                   | `5`          |
+| **Comparison**        | `==`     | Equal (loose, type-converting)             | `a == b`                  | `5 == '5'`                         | `true`       |
+|                       | `===`    | Strictly equal (value + type)              | `a === b`                 | `5 === '5'`                        | `false`      |
+|                       | `!=`     | Not equal (loose)                          | `a != b`                  | `5 != '5'`                         | `false`      |
+|                       | `!==`    | Strict not equal                           | `a !== b`                 | `5 !== '5'`                        | `true`       |
+|                       | `>`      | Greater than                               | `a > b`                   | `6 > 4`                            | `true`       |
+|                       | `<`      | Less than                                  | `a < b`                   | `3 < 2`                            | `false`      |
+|                       | `>=`     | Greater than or equal to                   | `a >= b`                  | `5 >= 5`                           | `true`       |
+|                       | `<=`     | Less than or equal to                      | `a <= b`                  | `4 <= 6`                           | `true`       |
+| **Logical**           | `&&`     | Logical AND                                | `a && b`                  | `true && false`                   | `false`      |
+|                       | `||`     | Logical OR                                 | `a || b`                  | `true || false`                   | `true`       |
+|                       | `!`      | Logical NOT (negation)                     | `!a`                      | `!true`                           | `false`      |
+| **Bitwise**           | `&`      | Bitwise AND                                | `a & b`                   | `5 & 1`                            | `1`          |
+|                       | `|`      | Bitwise OR                                 | `a | b`                   | `5 | 1`                            | `5`          |
+|                       | `^`      | Bitwise XOR                                | `a ^ b`                   | `5 ^ 1`                            | `4`          |
+|                       | `~`      | Bitwise NOT                                | `~a`                      | `~5`                               | `-6`         |
+|                       | `<<`     | Bitwise left shift                         | `a << b`                  | `5 << 1`                           | `10`         |
+|                       | `>>`     | Bitwise right shift                        | `a >> b`                  | `5 >> 1`                           | `2`          |
+| **String**            | `+`      | Concatenates strings                       | `a + b`                   | `"Hello" + " JS"`                 | `"Hello JS"` |
+| **Unary**             | `typeof`| Returns type of operand                    | `typeof a`                | `typeof 42`                       | `"number"`   |
+|                       | `delete`| Deletes object property                    | `delete obj.key`          | `delete user.name`                | `true`       |
+|                       | `++`     | Increment                                  | `a++` or `++a`            | `let a = 1; a++`                  | `2` (after)  |
+|                       | `--`     | Decrement                                  | `a--` or `--a`            | `let a = 1; --a`                  | `0`          |
+| **Ternary**           | `? :`    | Conditional expression                     | `cond ? val1 : val2`      | `5 > 3 ? "Yes" : "No"`            | `"Yes"`      |
+| **Spread / Rest**     | `...`    | Expands / gathers array/items              | `[...arr]`, `(...args)`   | `[... [1,2]]`                     | `[1,2]`       |
+| **Nullish Coalescing**| `??`     | Fallback if `null` or `undefined`         | `val ?? default`          | `null ?? "Guest"`                 | `"Guest"`     |
+| **Optional Chaining** | `?.`     | Safe nested access                         | `obj?.prop`               | `user?.name`                      | `"John"` or `undefined` |
+| **Membership**        | `in`     | Checks if key exists in object             | `"key" in obj`            | `"age" in user`                   | `true`        |
+|                       | `instanceof`| Checks object type                    | `obj instanceof Type`     | `arr instanceof Array`            | `true`        |
+| **Comma**             | `,`      | Evaluates multiple expressions             | `(x = 1, y = 2)`          | `let z = (1, 2)`                  | `2`           |
+
+---
+
+📝 **Tip**: Use `===` instead of `==` to avoid unexpected type coercion.
 
 
 ```js
