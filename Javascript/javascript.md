@@ -602,6 +602,106 @@ export default App;
 
 ```
 
+## E-commerce
+
+
+## App.jsx
+```python
+// src/App.jsx
+import React from 'react';
+import './App.css'; // for styles
+
+function App() {
+  return (
+    <div className="container">
+      <h1>ShopEasy 🛒</h1>
+
+      <section className="products">
+        <div className="card">
+          <img src="/OIP.jpeg" alt="Local Product" />
+          <h2>Smart Watch</h2>
+          <p>Track your steps, heart rate, and more.</p>
+          <p className="price">₹1,999</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div className="card">
+          <img src="/OIP.jpeg" alt="Local Product" />
+          <h2>Bluetooth Speaker</h2>
+          <p>Deep bass, portable, long battery life.</p>
+          <p className="price">₹1,499</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div className="card">
+          <img src="/OIP.jpeg" alt="Local Product" />
+
+          <h2>Wireless Headphones</h2>
+          <p>Noise cancellation, high-quality sound.</p>
+          <p className="price">₹2,499</p>
+          <button>Add to Cart</button>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2025 ShopEasy. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
+
+
+```
+
+## Main.jsx
+```
+// src/main.jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
+## Data.js
+
+
+```python
+const products = [
+  {
+    id: 1,
+    name: "Wireless Headphones",
+    price: 2499,
+    description: "High-quality wireless headphones with noise cancellation.",
+    image: ""
+  },
+  {
+    id: 2,
+    name: "Smart Watch",
+    price: 1999,
+    description: "Track your fitness with this smart wearable.",
+    image: ""
+  },
+  {
+    id: 3,
+    name: "Bluetooth Speaker",
+    price: 1499,
+    description: "Portable speaker with deep bass and long battery life.",
+    image: ""
+  }
+];
+
+export default products;
+
+
+```
+
 
 
 
