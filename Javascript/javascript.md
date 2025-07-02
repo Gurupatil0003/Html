@@ -1,3 +1,118 @@
+# 📘 JavaScript Data Types – Complete Guide
+
+JavaScript data types are divided into **two categories**:
+
+- ✅ **Primitive Data Types** – Immutable, stored by value
+- ✅ **Non-Primitive (Reference) Data Types** – Mutable, stored by reference
+
+---
+
+## 📊 Data Types Table
+
+| Data Type     | Category       | Description                                      | Example                                 | `typeof` Result | Common Operations                                           |
+|---------------|----------------|--------------------------------------------------|------------------------------------------|------------------|--------------------------------------------------------------|
+| **Number**    | Primitive       | Integer or floating-point numeric values         | `let x = 42;`<br>`let y = 3.14;`         | `number`         | `+`, `-`, `*`, `/`, `%`, `Math.round()`, `Math.random()`     |
+| **String**    | Primitive       | Sequence of characters                           | `let name = "John";`                     | `string`         | `.length`, `.slice()`, `.replace()`, `+` for concat          |
+| **Boolean**   | Primitive       | Logical value: true or false                     | `let isReady = true;`                    | `boolean`        | `&&`, `||`, `!`, used in `if`, `while`                       |
+| **Undefined** | Primitive       | Declared but not assigned a value                | `let z;`                                 | `undefined`      | Check with `=== undefined`                                  |
+| **Null**      | Primitive       | Intentional absence of object value              | `let a = null;`                          | `object`*        | Check with `=== null`                                       |
+| **BigInt**    | Primitive       | For arbitrarily large integers                   | `let big = 12345678901234567890n;`       | `bigint`         | `+`, `-`, `*`, `/` (with `n`)                                |
+| **Symbol**    | Primitive       | Unique and immutable identifier                  | `let id = Symbol("id");`                | `symbol`         | Used as unique keys, `Symbol.for()`, comparison              |
+| **Object**    | Non-Primitive   | Collection of key-value pairs                    | `let obj = {name: "Alice"};`             | `object`         | `obj.key`, `Object.keys()`, `Object.values()`, modify props  |
+| **Array**     | Non-Primitive   | Ordered collection (special object)              | `let arr = [1, 2, 3];`                   | `object`         | `.push()`, `.pop()`, `.map()`, `.length`, `.filter()`        |
+| **Function**  | Non-Primitive   | Callable block of code                           | `function greet() {}`                   | `function`       | `()`, `.call()`, `.apply()`, `.bind()`                       |
+| **NaN**       | Special Number  | Result of invalid math operation                 | `let result = 0 / "abc";`               | `number`         | `isNaN(x)`, `Number.isNaN()`                                |
+| **Infinity**  | Special Number  | Mathematical Infinity                            | `let x = 1 / 0;`                         | `number`         | Comparison: `=== Infinity`, `-Infinity`                      |
+
+> **⚠️ Note**: `typeof null` returns `"object"` — this is a known bug in JavaScript since its early days.
+>  
+> **🧠 Tip**: All non-primitive data types are mutable and stored by reference. Changes to them reflect across variables pointing to the same memory.
+
+---
+
+## ✅ Summary of Classification
+
+```txt
+Primitive:
+  - Number
+  - String
+  - Boolean
+  - Undefined
+  - Null
+  - BigInt
+  - Symbol
+
+Non-Primitive (Reference):
+  - Object
+  - Array
+  - Function
+
+
+
+
+```js
+
+b=`hello world`
+
+console.log(b.slice(-2))
+console.log(b.substring(-1))
+console.log(b.includes('h'))
+
+let str = "hello world";
+
+str.toUpperCase();     // "HELLO WORLD"
+str.toLowerCase();     // "hello world"
+str.trim();            // Removes spaces from both ends
+str.trimStart();       // Trims from start
+str.trimEnd();         // Trims from end
+str.replace("world", "JS");     // "hello JS"
+str.replaceAll("l", "-");       // "he--o wor-d"
+str.concat(" JS");     // "hello world JS"
+str.repeat(3);         // "hello worldhello worldhello world"
+
+
+// let str = "apple,banana,kiwi";
+
+// str.split(",");   // ["apple", "banana", "kiwi"]
+
+
+
+let a=[2,4,5,6]
+a[2]=56
+a.unshift(4545)
+console.log(a)
+
+a.shift()
+a.pop()
+console.log(a)
+
+arr=[4,5,6,7]
+console.log(arr.includes(7)) 
+console.log(arr.indexOf(4))
+
+console.log(arr)
+console.log(a.length)
+
+
+
+let ar={
+    
+    a:34,
+    age:56,
+    address:{
+        city:"gg"
+    }
+};
+
+ar['a']=456
+console.log(ar.address.city)
+
+delete ar.age
+console.log(ar)
+```
+
+
+
 ## Even or Odd
 
 
