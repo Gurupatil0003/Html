@@ -136,6 +136,23 @@ const calculate = () => d.value = eval(d.value) || "";
 
 ```
 
+## up
+```python
+function add(value) {
+  display.value += value;
+}
+
+function clearDisplay() {
+  display.value = "";
+}
+
+function calculate() {
+
+    display.value = eval(display.value);
+  
+}
+```
+
 ## Port contact
 
 ```python
