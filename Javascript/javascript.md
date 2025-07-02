@@ -909,6 +909,62 @@ export default App;
 
 ```
 
+```react
+// src/App.jsx
+import React, { useState } from 'react';
+import './App.css';
+import products from './data';
+
+function App() {
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
+
+  return (
+    <div className="container">
+      <h1>ShopEasy 🛒</h1>
+
+      <section className="products">
+        {products.map((product) => (
+          <div className="card" key={product.id}>
+            <img src={product.img} alt={product.name} />
+            <h2>{product.name}</h2>
+            <p>{product.desc}</p>
+            <p className="price">₹{product.price}</p>
+            <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+          </div>
+        ))}
+      </section>
+
+      {/* Cart Section */}
+      <section className="cart">
+        <h2>Your Cart 🛍️</h2>
+        {cart.length === 0 ? (
+          <p>Cart is empty</p>
+        ) : (
+          <ul>
+            {cart.map((item, index) => (
+              <li key={index}>
+                {item.name} - ₹{item.price}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <footer>
+        <p>© 2025 ShopEasy. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
+
+
+```
 
 
 
