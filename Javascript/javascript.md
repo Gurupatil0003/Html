@@ -849,6 +849,62 @@ export default App;
 
 ```react
 
+// src/App.jsx
+import React, { useState } from 'react';
+import './App.css';
+import products from './data';
+
+function App() {
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
+  return (
+    <div className="container">
+      <h1>ShopEasy 🛒</h1>
+      
+      <button className="view-cart-btn" onClick={() => setShowCart(!showCart)}>
+        🛒 View Cart ({cart.length})
+      </button>
+
+      {showCart && (
+        <div className="cart-box">
+          <h2>🛍️ Your Cart</h2>
+          {cart.length === 0 ? (
+            <p>No items yet!</p>
+          ) : (
+            <ul>
+              {cart.map((item, index) => (
+                <li key={index}>{item.name} - {item.price}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+
+      <section className="products">
+        {products.map((product) => (
+          <div key={product.id} className="card">
+            <img src={product.image} alt={product.name} />
+            <h2>{product.name}</h2>
+            <p>{product.description}</p>
+            <p className="price">{product.price}</p>
+            <button onClick={() => addToCart(product)}>Add to Cart</button>
+          </div>
+        ))}
+      </section>
+
+      <footer>
+        <p>© 2025 ShopEasy. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
 
 
 ```
