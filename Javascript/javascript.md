@@ -1339,3 +1339,26 @@ h1 {
 
 ```
 
+
+## form
+
+```jsx
+import React from "react";
+
+function Contact() {
+  return (
+    <div>
+      <h1>We love to hear from you</h1>
+
+      <form>
+        <input type="text" placeholder="Name" /><br /><br />
+        <input type="email" placeholder="Email" /><br /><br />
+        <textarea placeholder="Message here"></textarea><br /><br />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  );
+}
+
+export default Contact;
+```
