@@ -196,6 +196,315 @@ app.listen(PORT, async () => {
 ```
 
 
+##Registeratio for placement
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Placement Registration Form</title>
+</head>
+<body>
+  <h2>Register for Placement</h2>
+
+  <form action="/register" method="POST">
+    <!-- Basic Details -->
+    <label>Full Name:</label><br>
+    <input type="text" name="name" placeholder="Your name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" placeholder="Your email" required><br><br>
+
+    <label>Branch:</label><br>
+    <input type="text" name="branch" placeholder="Your branch" required><br><br>
+
+    <label>CGPA:</label><br>
+    <input type="number" name="cgpa" step="0.01" placeholder="Your CGPA" required><br><br>
+
+    <!-- Gender (Radio Buttons) -->
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male" required> Male<br>
+    <input type="radio" name="gender" value="Female"> Female<br>
+    <input type="radio" name="gender" value="Other"> Other<br><br>
+
+    <!-- Skills (Checkboxes) -->
+    <label>Skills:</label><br>
+    <input type="checkbox" name="skills" value="C"> C<br>
+    <input type="checkbox" name="skills" value="Java"> Java<br>
+    <input type="checkbox" name="skills" value="Python"> Python<br>
+    <input type="checkbox" name="skills" value="JavaScript"> JavaScript<br><br>
+
+    <!-- Year Dropdown -->
+    <label>Year of Study:</label><br>
+    <select name="year" required>
+      <option value="">Select year</option>
+      <option value="1st">1st Year</option>
+      <option value="2nd">2nd Year</option>
+      <option value="3rd">3rd Year</option>
+      <option value="4th">4th Year</option>
+    </select><br><br>
+
+    <!-- Resume Upload (Optional) -->
+    <label>Upload Resume (optional):</label><br>
+    <input type="file" name="resume"><br><br>
+
+    <!-- Terms & Conditions -->
+    <input type="checkbox" name="agree" required>
+    I agree to the placement terms and conditions.<br><br>
+
+    <!-- Submit Button -->
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
 
 
 
+```
+
+
+```js
+// index.js
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const app = express();
+const PORT = 3000;
+
+// Fix __dirname in ES Module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Middleware to parse POST data
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from "public" folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Route to serve form.html from public folder
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'form.html'));
+});
+
+// Handle POST request from form
+app.post('/register', (req, res) => {
+  const { name, email, branch, cgpa } = req.body;
+
+  console.log('📝 Student Registered:');
+  console.log({ name, email, branch, cgpa });
+
+  res.send(`<h3>✅ Thank you ${name}, registration complete!</h3>`);
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
+
+
+
+```
+
+
+# Placement Cell
+
+### a.js
+```js
+
+import express from "express";
+import bodyParser from "body-parser";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const app = express();
+const port = 3000;
+
+// Needed to resolve __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+
+let students = [];
+let companies = [];
+let offers = [];
+
+// Routes
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "index.html"));
+});
+
+app.get("/student-register", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "student-register.html"));
+});
+
+app.post("/student-register", (req, res) => {
+  const { name, branch, cgpa } = req.body;
+  students.push({ name, branch, cgpa });
+  res.redirect("/students");
+});
+
+app.get("/students", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "student-list.html"));
+});
+
+app.get("/students-data", (req, res) => {
+  res.json(students);
+});
+
+app.get("/company", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "company.html"));
+});
+
+app.post("/company", (req, res) => {
+  const { cname, role, salary } = req.body;
+  companies.push({ cname, role, salary });
+  offers.push({ cname, role, salary });
+  res.redirect("/offers");
+});
+
+app.get("/offers", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "offers.html"));
+});
+
+app.get("/offers-data", (req, res) => {
+  res.json(offers);
+});
+
+app.listen(port, () => {
+  console.log(`Placement Cell running at http://localhost:${port}`);
+});
+
+
+
+```
+
+
+## Index.html
+```js
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Placement Cell</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Welcome to Placement Cell</h1>
+  <a href="/student-register">Register Student</a>
+  <a href="/students">View Students</a>
+  <a href="/company">Register Company</a>
+  <a href="/offers">Placement Offers</a>
+</body>
+</html>
+
+
+```
+
+
+## student-register.html
+```js
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration</title>
+</head>
+<body>
+  <h2>Register Student</h2>
+  <form action="/student-register" method="POST">
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="text" name="branch" placeholder="Branch" required><br>
+    <input type="number" step="0.01" name="cgpa" placeholder="CGPA" required><br>
+    <button type="submit">Register</button>
+  </form>
+  <a href="/">Back to Home</a>
+</body>
+</html>
+
+
+```
+
+
+## student-list.html
+```js
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student List</title>
+</head>
+<body>
+  <h2>Registered Students</h2>
+  <ul>
+    <!-- This will be dynamically filled using Express in next version -->
+    <script>
+      fetch('/students-data').then(res => res.json()).then(data => {
+        document.write('<ul>');
+        data.forEach(s => {
+          document.write(`<li>${s.name} - ${s.branch} - ${s.cgpa}</li>`);
+        });
+        document.write('</ul>');
+      });
+    </script>
+  </ul>
+  <a href="/">Back</a>
+</body>
+</html>
+
+
+```
+
+
+# company.html
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Company</title>
+</head>
+<body>
+  <h2>Company Registration</h2>
+  <form action="/company" method="POST">
+    <input type="text" name="cname" placeholder="Company Name" required><br>
+    <input type="text" name="role" placeholder="Job Role" required><br>
+    <input type="number" name="salary" placeholder="Salary (in LPA)" required><br>
+    <button type="submit">Submit</button>
+  </form>
+  <a href="/">Back to Home</a>
+</body>
+</html>
+
+
+```
+
+## offers.html
+```js
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Placement Offers</title>
+</head>
+<body>
+  <h2>Latest Placement Offers</h2>
+  <script>
+    fetch('/offers-data').then(res => res.json()).then(data => {
+      document.write('<ul>');
+      data.forEach(o => {
+        document.write(`<li>${o.cname} - ${o.role} - ₹${o.salary} LPA</li>`);
+      });
+      document.write('</ul>');
+    });
+  </script>
+  <a href="/">Back</a>
+</body>
+</html>
+
+
+
+```
