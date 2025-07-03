@@ -20,7 +20,7 @@ app.listen(port, () => {
 ```
 
 ## CRUD Operation
-```
+```js
 import express from 'express';
 
 const app = express();
