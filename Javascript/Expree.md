@@ -508,3 +508,64 @@ app.listen(port, () => {
 
 
 ```
+
+
+
+## code Main
+## form.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/submit" method="post">
+    <input type="text" name="name"> 
+    <input type="text" name="email">
+    <button type="submit">button</button>
+  </form>
+  
+</body>
+</html>
+
+```
+## Form.js
+```js
+import express from 'express';
+import path from 'path'
+import { fileURLToPath } from 'url';
+
+const port=3000;
+const app=express()
+
+// Setup __dirname for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.json());
+
+
+app.get ('/',(req,res)=>{
+  res.send("hello")
+});
+
+app.post('/submit',(req,res)=>{
+  const {name,email}=req.body;
+  console.log({name} , {email})
+  res.send(`<h2> thnaks ${name} (${email})`)
+
+});
+
+app.listen(port,()=>{
+  console.log(`server http://localhost:${port}/form.html`);
+
+});
+
+```
