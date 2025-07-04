@@ -570,3 +570,15 @@ app.listen(port,()=>{
 });
 
 ```
+
+# placement Registaration
+```js
+app.post('/register', (req, res) => {
+  const { name, email, branch, cgpa } = req.body;
+
+  console.log('📝 Student Registered:');
+  console.log({ name, email, branch, cgpa });
+
+  res.send(`<h3>✅ Thank you ${name}, registration complete!</h3>`);
+});
+```
