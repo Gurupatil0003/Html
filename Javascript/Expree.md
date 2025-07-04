@@ -571,7 +571,7 @@ app.listen(port,()=>{
 
 ```
 
-# placement Registaration
+## placement Registaration
 ```js
 app.post('/register', (req, res) => {
   const { name, email, branch, cgpa } = req.body;
