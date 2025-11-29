@@ -219,13 +219,13 @@ footer {
 }
 ```
 ✅ PART 9 — Card UI Box
-HTML
+```HTML
 <div class="card">
   <h3>Card Title</h3>
   <p>This is card content.</p>
 </div>
-
-CSS
+```
+```CSS
 .card {
   width: 250px;
   padding: 15px;
@@ -233,16 +233,16 @@ CSS
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
+```
 ✅ PART 10 — Flexbox (very useful for layouts)
-HTML
+```HTML
 <div class="flexbox">
   <div class="item">One</div>
   <div class="item">Two</div>
   <div class="item">Three</div>
 </div>
-
-CSS
+```
+```CSS
 .flexbox {
   display: flex;
   gap: 10px;
@@ -253,37 +253,19 @@ CSS
   padding: 15px;
   border-radius: 6px;
 }
+```
 
-❓ Want more parts?
-
-I can continue with:
-
-✔ GRID layout
-✔ Animations
-✔ Responsive design (media queries)
-✔ Forms with styling
-✔ Navigation bar
-✔ Full page template
-✔ All HTML tags list with examples
-
-Just say “continue” or tell me which one you want next!
-
-You said:
-yes please
-ChatGPT said:
-
-Perfect! Here comes PART 11 onward — short + simple HTML & CSS chunks.
 
 ✅ PART 11 — CSS Grid Layout
-HTML
+```HTML
 <div class="grid-container">
   <div class="box">1</div>
   <div class="box">2</div>
   <div class="box">3</div>
   <div class="box">4</div>
 </div>
-
-CSS
+```
+```CSS
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -298,12 +280,12 @@ CSS
   color: white;
   font-size: 20px;
 }
-
+```
 ✅ PART 12 — Simple Animation
-HTML
+```HTML
 <div class="animate-box">Hello!</div>
-
-CSS
+```
+```CSS
 .animate-box {
   width: 100px;
   height: 100px;
@@ -315,12 +297,12 @@ CSS
   from { transform: translateX(0); }
   to   { transform: translateX(100px); }
 }
-
+```
 ✅ PART 13 — Responsive Design (Media Query)
-HTML
+```HTML
 <div class="responsive-box">Resize the screen</div>
-
-CSS
+```
+```CSS
 .responsive-box {
   background: orange;
   padding: 20px;
@@ -333,16 +315,16 @@ CSS
     font-size: 14px;
   }
 }
-
+```
 ✅ PART 14 — Navigation Bar
-HTML
+```HTML
 <nav class="navbar">
   <a href="#">Home</a>
   <a href="#">Services</a>
   <a href="#">Contact</a>
 </nav>
-
-CSS
+```
+```CSS
 .navbar {
   background: black;
   padding: 10px;
@@ -357,9 +339,9 @@ CSS
 .navbar a:hover {
   text-decoration: underline;
 }
-
+```
 ✅ PART 15 — Full Simple Layout
-HTML
+```HTML
 <header>Header</header>
 
 <section class="content">
@@ -368,8 +350,8 @@ HTML
 </section>
 
 <footer>Footer</footer>
-
-CSS
+```
+```CSS
 header, footer {
   background: #333;
   color: white;
@@ -393,3 +375,4 @@ main {
   padding: 15px;
   background: #f9f9f9;
 }
+```
