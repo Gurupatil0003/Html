@@ -118,3 +118,129 @@ function validateForm(){
   }
 }
 ```
+
+
+```js
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Character Counter</title>
+</head>
+<body>
+  <style>
+    body {
+  font-family: sans-serif;
+  padding: 30px;
+  text-align: center;
+}
+
+textarea {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+}
+
+textarea:focus {
+  border-color: #4a90e2;
+}
+
+#count {
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+  </style>
+
+  <h2>Type Something:</h2>
+  <textarea id="text" oninput="countChars()" rows="4" cols="40"></textarea>
+
+  <p>Characters: <span id="count">0</span></p>
+
+  <script>
+    function countChars() {
+  let text = document.getElementById("text").value;
+  document.getElementById("count").innerText = text.length;
+}
+  </script>
+  
+  
+</body>
+</html>
+
+```
+<!DOCTYPE html>
+<html>
+<body style="font-family:sans-serif;padding:20px;max-width:600px;margin:auto">
+
+<style>
+  body { background:#f7f7f7; }
+  #text {
+    background:#fff;
+    padding:15px;
+    border-radius:8px;
+    border-left:4px solid #4CAF50;
+    margin-bottom:15px;
+    font-size:18px;
+  }
+  #box {
+    width:100%;
+    padding:12px;
+    border:2px solid #ccc;
+    border-radius:8px;
+    font-size:18px;
+    outline:none;
+  }
+#box:focus {
+    border-color:#4CAF50;
+  }
+  .stats {
+    margin-top:15px;
+    padding:10px;
+    background:#fff;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    font-size:18px;
+  }
+</style>
+
+<p id="text">The quick brown fox jumps over the lazy dog.</p>
+
+<input id="box" placeholder="Start typing...">
+
+<div class="stats">
+  <div>⏱ Time: <span id="t">0</span>s</div>
+  <div>⌨ WPM: <span id="w">0</span></div>
+  <div>🎯 Accuracy: <span id="a">100</span>%</div>
+</div>
+<script>
+let sec = 0, started = false;
+let target = text.innerText;
+
+box.oninput = () => {
+
+  if (!started) {
+    started = true;
+    setInterval(() => { sec++; t.innerText = sec }, 1000);
+  }
+
+  let typed = box.value;
+  let correct = 0;
+
+  for (let i = 0; i < typed.length; i++)
+    if (typed[i] == target[i]) correct++;
+
+  a.innerText = ((correct / typed.length) * 100 || 100).toFixed(0);
+
+  let words = typed.trim().split(" ").length;
+  w.innerText = Math.round((words / sec) * 60) || 0;
+  if (typed === target)
+    alert("Done! WPM: " + w.innerText);
+};
+</script>
+
+</body>
+</html>
+
