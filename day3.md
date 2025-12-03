@@ -171,6 +171,78 @@ textarea:focus {
 
 ```
 
+
+```js
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Theme Switcher</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        transition: background 0.5s;
+        color: white;
+    }
+    .container {
+        text-align: center;
+        padding: 20px 40px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(8px);
+    }
+    select {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: none;
+        font-size: 15px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h3>Weather Theme Switcher</h3>
+    <select id="weather" onchange="changeTheme()">
+        <option value="sunny">Sunny</option>
+        <option value="rainy">Rainy</option>
+        <option value="cloudy">Cloudy</option>
+        <option value="night">Night</option>
+    </select>
+</div>
+
+<script>
+    const themes = {
+        sunny: "linear-gradient(135deg, #FFCF71, #FF9F1C)",
+        rainy: "linear-gradient(135deg, #4B79A1, #283E51)",
+        cloudy: "linear-gradient(135deg, #bdc3c7, #2c3e50)",
+        night: "linear-gradient(135deg, #0F2027, #203A43, #2C5364)"
+    };
+
+    function changeTheme() {
+        document.body.style.background = themes[
+            document.getElementById("weather").value
+        ];
+    }
+
+    changeTheme();
+</script>
+
+</body>
+</html>
+
+
+
+```
 ```js
 <!DOCTYPE html>
 <html>
