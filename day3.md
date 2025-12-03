@@ -170,6 +170,8 @@ textarea:focus {
 </html>
 
 ```
+
+```js
 <!DOCTYPE html>
 <html>
 <body style="font-family:sans-serif;padding:20px;max-width:600px;margin:auto">
@@ -243,4 +245,4 @@ box.oninput = () => {
 
 </body>
 </html>
-
+```
