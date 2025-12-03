@@ -318,3 +318,93 @@ box.oninput = () => {
 </body>
 </html>
 ```
+
+
+## ✅ Example 1: Change Input Value Using getElementsByName
+```HTML
+<input type="text" name="username" placeholder="Enter name">
+<button onclick="updateName()">Set Name</button>
+
+<script src="script.js"></script>
+
+script.js
+function updateName() {
+    let user = document.getElementsByName("username")[0];
+    user.value = "John Doe";
+}
+```
+## ✅ Example 2: Add New Element Using createElement + appendChild
+```HTML
+<div class="box"></div>
+<button onclick="addText()">Add Text</button>
+
+<script src="script.js"></script>
+
+script.js
+function addText() {
+    let div = document.getElementsByClassName("box")[0];
+
+    let p = document.createElement("p");
+    p.innerText = "New paragraph added!";
+    
+    div.appendChild(p);
+}
+```
+
+## ✅ Example 3: Change Style Using getElementsByTagName
+```HTML
+<div>Box 1</div>
+<div>Box 2</div>
+<div>Box 3</div>
+
+<button onclick="colorBoxes()">Color Boxes</button>
+
+<script src="script.js"></script>
+
+script.js
+function colorBoxes() {
+    let boxes = document.getElementsByTagName("div");
+
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].style.background = "yellow";
+        boxes[i].style.padding = "10px";
+        boxes[i].style.margin = "5px";
+    }
+}
+```
+
+## ✅ Example 4: Access Children Using .children
+```HTML
+<ul id="list">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Mango</li>
+</ul>
+
+<button onclick="changeItems()">Change Items</button>
+
+<script src="script.js"></script>
+
+script.js
+function changeItems() {
+    let list = document.getElementsByTagName("ul")[0];
+    let items = list.children;
+
+    items[0].innerText = "🍎 Red Apple";
+    items[1].innerText = "🍌 Sweet Banana";
+    items[2].innerText = "🥭 Yellow Mango";
+}
+```
+## ✅ Example 5: Remove Element Using .remove()
+```HTML
+<p class="msg">This message will be removed.</p>
+<button onclick="removeMsg()">Remove</button>
+
+<script src="script.js"></script>
+
+script.js
+function removeMsg() {
+    let msg = document.getElementsByClassName("msg")[0];
+    msg.remove();
+}
+```
